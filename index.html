@@ -1,0 +1,110 @@
+1
+
+
+12
+online
+Today
+Today
+20:56
+Home in a minute babe
+21:01
+When are you sleeping?
+21:01
+0:20
+21:05
+You
+0:01 Video
+.
+21:06
+You
+0:20 Video
+21:09
+21:09
+21:21
+An123456
+21:53
+hey, i want an html that is pink pastel BG, and rain simulator with hearts for rain drops, set their color on a pink pastel spectrum
+22:11
+Your browser doesn't support video playback.
+22:11
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pastel Heart Rain</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #ffd9e8; /* pastel pink */
+        font-family: Arial, sans-serif;
+    }
+
+    .heart {
+        position: absolute;
+        top: -20px;
+        font-size: 20px;
+        animation: fall linear infinite;
+        opacity: 0.9;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(110vh) rotate(360deg);
+            opacity: 0.3;
+        }
+    }
+</style>
+</head>
+<body>
+
+<script>
+    const pastelPinks = [
+        "#ffb3c6",
+        "#ffccd5",
+        "#ff8fab",
+        "#ffc2d1",
+        "#f7a8b8",
+        "#f4b6c2"
+    ];
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.textContent = "❤";
+
+        // random pastel shade
+        heart.style.color = pastelPinks[Math.floor(Math.random() * pastelPinks.length)];
+
+        // random size
+        const size = Math.random() * 20 + 15; 
+        heart.style.fontSize = size + "px";
+
+        // random horizontal starting point
+        heart.style.left = Math.random() * 100 + "vw";
+
+        // random animation duration
+        heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+        document.body.appendChild(heart);
+
+        // Remove after falling
+        setTimeout(() => {
+            heart.remove();
+        }, 7000);
+    }
+
+    // Generate hearts continuously
+    setInterval(createHeart, 150);
+</script>
+
+</body>
+</html>
+22:12
+
+
